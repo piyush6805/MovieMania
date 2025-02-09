@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TUDUM</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>TUDUM Organizer</h1>
+    <div class="theme-toggle">
+      <input type="checkbox" id="theme-toggle-checkbox" />
+      <label for="theme-toggle-checkbox">Dark Mode</label>
+    </div>
+  </header>
+
+  <main>
+    <section id="search-section">
+      <div class="search-by-name">
+        <h2>Search by Name</h2>
+        <form id="search-name-form">
+          <input type="text" id="search-name-input" placeholder="Enter movie name" required />
+          <select id="genre-filter-name">
+            <option value="">All Genres</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Horror">Horror</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+          </select>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <div class="search-by-genre">
+        <h2>Search by Genre</h2>
+        <form id="search-genre-form">
+          <select id="genre-filter-genre">
+            <option value="">Select Genre</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Horror">Horror</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+          </select>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="search-results">
+      <div id="movies-container"></div>
+    </section>
+
+    <section id="library">
+      <h2>Your Library</h2>
+      <div class="shelves">
+        <div class="shelf" id="to-watch" data-shelf="to-watch">
+          <h3>WatchList</h3>
+          <div class="shelf-content"
+               ondragover="allowDrop(event)"
+               ondragleave="removeDragOver(event)"
+               ondrop="drop(event, 'to-watch')">
+          </div>
+        </div>
+
+        <div class="shelf" id="watching" data-shelf="watching">
+          <h3>Watching</h3>
+          <div class="shelf-content"
+               ondragover="allowDrop(event)"
+               ondragleave="removeDragOver(event)"
+               ondrop="drop(event, 'watching')">
+          </div>
+        </div>
+
+        <div class="shelf" id="watched" data-shelf="watched">
+          <h3>TUDUMed</h3>
+          <div class="shelf-content"
+               ondragover="allowDrop(event)"
+               ondragleave="removeDragOver(event)"
+               ondrop="drop(event, 'watched')">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
